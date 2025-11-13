@@ -1,10 +1,19 @@
-import React from "react";
+import { MdProductionQuantityLimits } from "react-icons/md"; 
+import { CgHome } from "react-icons/cg"; 
+import { GrServices } from "react-icons/gr"; 
+import { AiOutlinePhone } from "react-icons/ai"; 
+import { BiCartAlt } from "react-icons/bi"; 
+import { CiHome } from "react-icons/ci"; 
+import { CiSearch } from "react-icons/ci"; 
 import { Link } from "react-router-dom";
 import useStore from "/src/store/CartStore.js";
 import { HashLink } from "react-router-hash-link"; 
 
 const Navbar = () => {
-  const { count } = useStore();
+  const { count } = useStore(); 
+
+//  const [input,setInput]=useState('')
+ 
 
   return (
     <nav className="bg-white text-xl  h-25   z-99 sticky top-0 text-gray-800 shadow-md">
@@ -17,44 +26,46 @@ const Navbar = () => {
               src="/src/assets/images/gharelukinmel.png"
               alt="Logo"
             />
-            <span className="text-xl font-bold">Gharelu-Kinmel</span>
+            <Link to="/" className="text-xl font-bold">Gharelu-Kinmel</Link>
           </Link>
 
           {/* Nav Links */}
           <div className="hidden md:flex space-x-8 text-2xl items-center">
-            <Link
+           <CgHome />  <Link
               to="/"
               className="text-xl font-semibold hover:text-blue-600 transition"
             >
-              Home
+               Home
             </Link>
-            <Link
+            <MdProductionQuantityLimits /><Link
               to="/products"
               className="text-xl font-semibold hover:text-blue-600 transition"
             >
               Products
             </Link>
-            <Link
+             <BiCartAlt /><Link
               to="/cart"
               className="text-xl font-semibold hover:text-blue-600 transition"
             >
-              Cart
+             Cart
             </Link>
 
-            <HashLink
+
+
+             <GrServices /><HashLink
               smooth
               to="/#services"
               className="text-xl font-semibold hover:text-blue-600 transition"
             >
-              Services
+             Services
             </HashLink>
 
-            <HashLink
+           <AiOutlinePhone /><HashLink
               smooth
               to="/#contact"
               className="text-xl font-semibold hover:text-blue-600 transition"
             >
-              Contact
+             Contact
             </HashLink>
           </div>
 

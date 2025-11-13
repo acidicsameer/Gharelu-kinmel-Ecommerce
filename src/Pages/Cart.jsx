@@ -43,12 +43,12 @@ const Clearnotify = () =>{
   const { clearCart,count,removeItem, cartItems,totalCost,shippingCost} = useStore();
 
   return (
-    <div className=" flex justify-center items-center">
-    <div className="w-1/2 mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">🛒 Your Cart</h2>
+    <div className=" flex  flex-col-reverse  justify-center  items-center">
+    <div className="  ">
+      <div className="text-2xl font-bold mb-4">🛒 Your Cart</div>
 
       {cartItems.length === 0 ? (
-        <div>
+        <div className=" ">
         <p className="text-gray-500 text-xl ">Cart is empty</p> 
         <Link to ="/products">
         <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
@@ -109,7 +109,7 @@ const Clearnotify = () =>{
         </div>
       )}
     </div>
-   <div className="w-1/2  items-center    flex flex-col p-5 bg-white rounded-lg   ">
+   <div className="w-full  items-center    flex  flex-col  p-5 bg-white rounded-lg   ">
   <h2 className="text-xl font-semibold mb-4 text-gray-800">Your Product Details</h2>
     
   <div className="space-y-2 text-gray-700">

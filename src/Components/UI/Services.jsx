@@ -3,7 +3,7 @@ import ServiceCards from "./ServiceCards";
 
 const Services = () => {
   return (
-    <div className=" h-max-[100vh]  h-[70vh]">
+    <div className=" max-h-[100vh]  h-[70vh]">
       <ServiceCards id="#services" />
     </div>
   );

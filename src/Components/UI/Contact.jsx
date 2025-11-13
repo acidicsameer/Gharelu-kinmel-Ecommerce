@@ -9,10 +9,6 @@ import notificationsound from "/sound/removedSound.wav";
 const ServiceId = import.meta.env.VITE_serviceid;
 const TemplateID = import.meta.env.VITE_templateid;
 const publicKey = import.meta.env.VITE_publickey;
-
-
-
-
 const Contact = () => {
   const form = useRef();
   const {
@@ -135,7 +131,7 @@ const Contact = () => {
               {/* Name Field */}
               <div>
                 <label htmlFor="name" className="block mb-1 font-medium">
-                   Name:
+                  Name:
                 </label>
                 <input
                   id="name"
