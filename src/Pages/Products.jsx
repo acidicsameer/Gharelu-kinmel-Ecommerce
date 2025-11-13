@@ -1,3 +1,6 @@
+import { BiStar } from "react-icons/bi"; 
+import { AiTwotoneStar } from "react-icons/ai"; 
+import { AiFillStar } from "react-icons/ai"; 
 import { FcSearch } from "react-icons/fc"; 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -24,6 +27,8 @@ const Products = () => {
   } 
   
 
+
+
   const [items, setItems] = useState([]);
   const [filtered, setFiltered] = useState([]);
 
@@ -45,7 +50,12 @@ const Products = () => {
         item.category.toLowerCase().includes(text)
     );
     setFiltered(filteredResult);
-  };
+  };  
+ 
+
+ 
+  
+
 
   return (
     <section className="bg-white min-h-screen py-10 px-4">
@@ -98,7 +108,8 @@ const Products = () => {
           className="bg-green-400 text-white px-2 py-1  rounded"
         >
           Show All
-        </button>
+        </button> 
+    
       </div>
 
       <div className="max-w-7xl mx-auto">
@@ -120,12 +131,16 @@ const Products = () => {
                   loading="lazy"
                 />
                 <h1 className="text-lg font-semibold mb-1">{data.title}</h1>
-                <h3 className="text-blue-600 font-bold text-md mb-2">
+                <h3 className="text-blue-600 font-bold text-md mb-2 flex  gap-5 ">
                   ${data.price}
-                </h3>
+               
+                <h3  className="flex " >  {[...Array(Math.round(data.rating.rate))].map(( i) => ( 
+                  
+        <BiStar key={i}  className="text-yellow-400 " />
+      ))}</h3> </h3> 
                 <p className="text-sm text-gray-600 line-clamp-3 mb-4">
                   {data.description}
-                </p>
+                </p> 
                 <button
                   onClick={() => {
                     increase();
